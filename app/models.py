@@ -6,6 +6,8 @@ from django.utils import timezone
 
 
 class App(models.Model):
+    image = models.FileField(upload_to='account_files/images/', blank=True, default="default_files/default_file.png")
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     auth_code = models.TextField(default="null")
 

@@ -6,6 +6,8 @@ from django.utils import timezone
 
 
 class Service(models.Model):
+    image = models.FileField(upload_to='account_files/images/', blank=True, default="default_files/default_file.png")
+
     title = models.CharField(max_length=20, default="null")
     detail = models.TextField(default="null")
 

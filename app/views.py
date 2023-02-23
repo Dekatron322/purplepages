@@ -154,11 +154,17 @@ def EditProfile(request):
         phone =request.data["phone"]
 
         try:
+            image = request.FILES["image"]
+        except:
+            image = None
+
+        try:
             app_user = App.objects.get(auth_code=auth_code)
             app_user.first_name = first_name
             #app_user.username = username
             app_user.last_name = last_name
             app_user.phone = phone
+            app_user.image = image
             app_user.save()
 
 
@@ -169,3 +175,5 @@ def EditProfile(request):
 
             data = {"detail": "Error!!", "status_lean": False}
             return Response(data)
+
+

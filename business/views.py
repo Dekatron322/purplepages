@@ -5,6 +5,8 @@ import requests
 from business.models import Business
 from app.models import App
 
+from main.serializers import BusinessSerializer
+
 @api_view(['GET'])
 def Index(request):
     data = {
@@ -139,4 +141,49 @@ def Delete(request):
             data = {"detail": "Error!!", "status_lean": False}
             return Response(data)
 
+
+@api_view(['GET'])
+def All(request):
+    if request.method == 'GET':
+        businesses = Business.objects.filter(status=False).order_by('-pub_date')
+
+        serializer = BusinessSerializer(businesses, many=True)
+        if serializer:
+            return Response(serializer.data)
+
+        else:
+            return Response(str("errors!"))
+
+
+@api_view(['GET'])
+def Filter(request, category, location, rating):
+    if request.method == 'GET':
+        businesses = Business.objects.filter(status=True, category=category, location=location, rating=rating).order_by('-pub_date')
+
+        serializer = BusinessSerializer(businesses, many=True)
+        if serializer:
+            return Response(serializer.data)
+
+        else:
+            return Response(str("errors!"))
+
+
+@api_view(['GET'])
+def Get(request, business_id):
+
+    if request.method == 'GET':
+        try:
+            business = Business.objects.get(status=False, id=business_id)
+        except:
+            business = None
+
+        if business:
+            serializer = BusinessSerializer(business)
+            if serializer:
+                return Response(serializer.data)
+
+            else:
+                return Response(str("errors!"))
+        else:
+            return Response(str("Sorry, no business exist for this (id)"))
 

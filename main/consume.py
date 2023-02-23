@@ -20,6 +20,7 @@
 "password": "0000"
 }
 
+
 #/app/verify/
 {
 "auth_code": "92f7wqv545idyhbwb48skiuh65rehhlf",
@@ -43,6 +44,8 @@
 }
 
 ################################################################
+
+
 #/business/add/
 {
 "auth_code": "6ydpuz18yzy30d95x0ol1on77d0hwvl0",
@@ -59,6 +62,7 @@
 "marketplace": "marketplace here",
 "marketplace_link": "marketplace link here"
 }
+
 
 #/business/edit/
 {
@@ -78,6 +82,7 @@
 "marketplace_link": "marketplace link here"
 }
 
+
 #/business/delete/
 {
 "auth_code": "n4v58yp8ttuq83sc5g7vhppgn70kqw1v",
@@ -85,6 +90,8 @@
 }
 
 #########################################################
+
+
 #/blog/add/
 {
 "auth_code": "n4v58yp8ttuq83sc5g7vhppgn70kqw1v",
@@ -92,6 +99,8 @@
 "title": "blog title",
 "detail": "lorem lorem lorem"
 }
+
+
 
 #/blog/edit/
 {
@@ -101,12 +110,15 @@
 "detail": "lorem lorem lorem changed lorem"
 }
 
+
 #/blog/delete/
 {
 "auth_code": "n4v58yp8ttuq83sc5g7vhppgn70kqw1v",
 "blog_id": "1"
 }
 #########################################################
+
+
 #/product/add/
 {
 	"auth_code": "6ydpuz18yzy30d95x0ol1on77d0hwvl0",
@@ -116,6 +128,7 @@
 	"discount": "discount here",
 	"color": "color here"
 }
+
 
 #/product/edit/
 {
@@ -133,4 +146,42 @@
 	"product_id": "1"
 }
 
+#/blog/add-comment/
+{
+	"auth_code": "6ydpuz18yzy30d95x0ol1on77d0hwvl0",
+	"blog_id": "2",
+    "comment": "fuckkkkkk you"
+}
+
+#/wishlist/add/
+{
+	"auth_code": "6ydpuz18yzy30d95x0ol1on77d0hwvl0",
+	"product_id": "2"
+}
 #########################################################
+
+#/app/sign-up/
+#/app/sign-in/
+#/app/verify/
+#/app/reset/
+#/app/edit-profile/
+
+#/business/add/
+#/business/edit/
+#/business/delete/
+#/business/get/1/
+
+#/blog/add/
+#/blog/edit/
+#/blog/delete/
+#/blog/add-comment/
+
+#/product/add/
+#/product/edit/
+#/product/delete/
+
+#/service/add/
+#/service/edit/
+#/service/delete/
+
+#/review/add/

@@ -12,5 +12,8 @@ urlpatterns = [
 
     #
     path('', views.Index),
+    path('add/', views.Add),
+    path('edit/', views.Edit),
+    path('delete/', views.Delete),
     
     ]

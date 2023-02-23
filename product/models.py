@@ -6,10 +6,12 @@ from django.utils import timezone
 
 
 class Product(models.Model):
-    caption = models.CharField(max_length=1000, default="null")
-    price = models.CharField(max_length=1000, default="null")
-    discount = models.CharField(max_length=1000, default="null")
-    color = models.CharField(max_length=1000, default="null")
+    image = models.FileField(upload_to='account_files/images/', blank=True, default="default_files/default_file.png")
+    
+    caption = models.CharField(max_length=100, default="null")
+    price = models.CharField(max_length=100, default="null")
+    discount = models.CharField(max_length=100, default="null")
+    color = models.CharField(max_length=100, default="null")
 
     status = models.BooleanField(default=False)
 

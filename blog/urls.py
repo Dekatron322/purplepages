@@ -15,5 +15,9 @@ urlpatterns = [
     path('add/', views.Add),
     path('edit/', views.Edit),
     path('delete/', views.Delete),
+
+    path('add-comment/', views.AddComment),
+
+    #path('filter/<str:category>/<str:location>/<str:rating>/', views.Filter),
     
     ]

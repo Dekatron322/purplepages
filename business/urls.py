@@ -15,5 +15,8 @@ urlpatterns = [
     path('add/', views.Add),
     path('edit/', views.Edit),
     path('delete/', views.Delete),
+    path('all/', views.All),
+    path('filter/<str:category>/<str:location>/<str:rating>/', views.Filter),
+    path('get/<str:business_id>/', views.Get),
     
     ]

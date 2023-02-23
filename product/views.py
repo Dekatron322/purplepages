@@ -25,6 +25,11 @@ def Add(request):
         discount = request.data["discount"]
         color = request.data["color"]
 
+        try:
+            image = request.FILES["image"]
+        except:
+            image = None
+
 
         try:
             app_user = App.objects.get(auth_code=auth_code)
@@ -32,7 +37,8 @@ def Add(request):
                 caption=caption, 
                 price=price,
                 discount=discount,
-                color=color
+                color=color,
+                image=image,
             )
             product.save()
 
